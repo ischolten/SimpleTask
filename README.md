@@ -11,6 +11,8 @@ Run via CLI for 20 seconds
 ```./simple_task start```
 
 Run via Repl infinitely
-```iex -S mix
+```
+iex -S mix
+
 SimpleTask.start_task()
 ```
