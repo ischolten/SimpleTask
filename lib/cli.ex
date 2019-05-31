@@ -1,6 +1,4 @@
 defmodule SimpleTask.CLI do
-  import Supervisor.Spec
-
   def main(args) do
     IO.puts "Running"
 
@@ -17,7 +15,7 @@ defmodule SimpleTask.CLI do
 
   def run_commands(["start"]) do
     IO.puts "Starting job"
-    Supervisor.start_link([worker(SimpleTask, [])],
-                          [strategy: :one_for_one, name: SimpleTask])
+    SimpleTask.start_link()
+    Process.sleep(20_000)
   end
 end
